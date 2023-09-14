@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        #display{
+            height: 500px;
+            width: 450px;
+            border: 2px solid;
+            border-radius: 30px;
+            margin-left: 500px;
+            margin-top: 80px;
+            background-color:black;
+            box-shadow: 3px 4px 3px 4px rgb(137, 97, 97);
+            }
+         #disp{
+                 height: 40px;
+                 width: 300px;
+                 border: 1px solid;
+                 border-radius: 10px;
+                 margin-top: 40px;
+                 box-shadow: 4px 4px 3px 3px rgb(191, 173, 173);
+                 margin-left: 60px;
+                 background-color: rgb(235, 249, 251);
+        }  
+        .button{
+            height: 50px;
+            width: 70px;
+            border: 2px solid;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-top: 20px;
+            background-color: rgb(235, 249,251);
+        }
+        #col{
+            background-color: rgb(133, 252, 252);
+        }
+         
+    </style>
+</head>
+<body>
+    <div id="display">
+    <input type="text" id="disp">
+       <div class="row">
+        <button class="button" id="col" value="(" onclick="display('(')">(</button>
+        <button class="button" id="col" value=")" onclick="display(')')">)</button>
+        <button class="button" id="col" value="/" onclick="display('/')">/</button>
+        <button class="button" id="col" value="%" onclick="display('%')">%</button>
+        
+
+       </div>
+       <div class="row">
+        <button class="button" value="7" onclick="display('7')">7</button>
+        <button class="button" value="8" onclick="display('8')">8</button>
+        <button class="button" value="9" onclick="display('9')">9</button>
+        <button class="button" id="col" value="*" onclick="display('*')">*</button>
+        
+        
+
+       </div>
+       <div class="row">
+        <button class="button" value="6" onclick="display('4')">4</button>
+        <button class="button" value="5" onclick="display('5')">5</button>
+        <button class="button" value="4" onclick="display('6')">6</button>
+        <button class="button" id="col" value="+" onclick="display('+')">+</button>
+       
+
+       </div>
+
+       <div class="row">
+        <button class="button" value="1" onclick="display('1')">1</button>
+        <button class="button" value="2" onclick="display('2')">2</button>
+        <button class="button" value="3" onclick="display('3')">3</button>
+        <button class="button" id="col" value="-" onclick="display('-')">-</button>
+
+       </div>
+
+        <div class="row">
+            <button class="button" id="col" value="." onclick="display('.')">.</button>
+            <button class="button" value="0" onclick="display('0')">0</button>
+            <button class="button" id="col" value="=" onclick="calculate()">=</button>
+            <button class="button" id="col" value="ac" onclick="clrscn()">AC</button>
+            
+
+       </div>
+</div>
+
+<script>
+    function display(value) {
+              document.getElementById("disp").value += value;
+        
+    }
+    function calculate() {
+       var result=document.getElementById("disp").value;
+       var final=eval(result);
+       document.getElementById("disp").value=final;
+    }
+    function clrscn() {
+        document.getElementById("disp").value="";
+    }
+</script>
+
+</body>
+</html>
